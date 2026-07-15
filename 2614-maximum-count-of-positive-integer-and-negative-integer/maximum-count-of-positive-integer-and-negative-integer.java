@@ -12,8 +12,8 @@ class Solution {
        i = 0 ; j = n;
       while(i<=j){
         int mid = (i+j)/2;
-        if(nums[mid] > 0) j = mid-1;
-        else i = mid + 1;
+        if(nums[mid] <= 0) i = mid+1;
+        else j = mid - 1;
        }
        pos =nums.length - i ;
        return Math.max(neg , pos);
