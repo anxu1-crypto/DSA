@@ -1,11 +1,12 @@
 class Solution {
-    public boolean searchMatrix(int[][] matrix, int target) {
-        boolean flag = false;
-        for(int i=0; i<matrix.length; i++){
-            for(int j=0; j<matrix[0].length; j++){
-                if(matrix[i][j] == target) flag = true;
-            }
+    public boolean searchMatrix(int[][] arr, int target) {
+        int m = arr.length , i = 0, j = arr[0].length-1;
+        while(i<m && j >= 0){
+            if(arr[i][j] == target) return true;
+            if(arr[i][j] < target ) i++;
+            else j--;
         }
-        return flag;
+        return false;
+
     }
 }
